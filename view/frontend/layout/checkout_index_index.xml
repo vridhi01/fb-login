@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+      <!-- for css file -->
+      <css src="Excellence_FacebookLogin::css/style.css"/>
+  	</head>
+    <body>
+         <referenceContainer name="root">
+            <block class="Excellence\FacebookLogin\Block\FacebookLogin" ifconfig="facebooklogin/facebook/is_enabled"  name="checkout_root" template="checkout_root.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

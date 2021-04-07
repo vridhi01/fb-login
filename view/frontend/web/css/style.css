@@ -1,0 +1,24 @@
+.facebook-login {float: left;margin: 0 5px 0 0;}
+.facebook-login button {
+	background: #1e4389 !important;
+    border-color: #1e4389 !important;
+}
+
+.facebook-login button span span {
+  margin-left: 25px;
+  color: #ffffff;
+}
+body.customer-account-create .actions-toolbar.facebook-login{
+	padding: 20px 0;
+}
+
+.primary #btn_facebook_login{
+margin-top: 12px;
+}
+.checkout-shipping-address .facebook-login{
+	margin-bottom: 15px;
+}
+
+#checkout-step-shipping .form-login{
+	clear: both;
+}

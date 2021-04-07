@@ -1,0 +1,35 @@
+<?php if($block->getFBId()):?>
+<form class="form password forget"
+      action="<?php /* @escapeNotVerified */ echo $block->getUrl('*/*/fremove') ?>"
+      method="post"
+      id="form-validate"
+      data-mage-init='{"validation":{}}'>
+   
+    <div class="fb-profile-img" style="margin-bottom:10px;">
+        <a target="_blank" href="http://facebook.com/<?php echo $block->getFBId();?>"> <img src ="http://graph.facebook.com/<?php echo $block->getFBId();?>/picture?type=square" alt="profile_img" /> </a>
+    </div>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary"><span><?php /* @escapeNotVerified */ echo __('Disconnect Facebook Account') ?></span></button>
+        </div>
+        
+    </div>
+</form>
+<?php else:?>
+<div class="actions-toolbar facebook-login">
+    <div class="primary">
+            <button id="btn_facebook_login" type="submit" class="action save primary" title="Save"><span><?php echo __('Connect Facebook Account') ?></span></button>
+        </div>
+       
+   </div>
+
+   <script>
+       require(['excellence/facebooklogin'], function (FacebookPopup) {
+           $('btn_facebook_login').observe('click', function () {
+               var fbPopup = new FacebookPopup();
+               fbPopup.openPopup('<?php echo $block->getLoginUrl()?>', '<?php echo __('Login By Facebook')?>');
+           })
+       });
+   </script>
+
+<?php endif; ?>

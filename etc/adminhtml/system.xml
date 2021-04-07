@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="facebooklogin" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>FacebookLogin</label>
+            <tab>excellence</tab>
+            <resource>Excellence_FacebookLogin::config_facebooklogin</resource>
+            <group id="facebook" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Facebook</label>
+                <field id="is_enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                     <comment><![CDATA[Enable/Disable Facebook login]]></comment>
+                </field>
+                <field id="app_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook App Id</label>
+                     <comment><![CDATA[Facebook app id Click on the link to get Facebook App Id <a href='https://developers.facebook.com/apps' target='_blank'>https://developers.facebook.com/apps</a>]]></comment>
+                </field>
+                <field id="app_secret" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook App Secret</label>
+                     <comment><![CDATA[Click on the link to get Facebook App Secret <a href='https://developers.facebook.com/apps' target='_blank'>https://developers.facebook.com/apps</a>]]></comment>
+                </field>
+                
+            </group>
+        </section>
+    </system>
+</config>

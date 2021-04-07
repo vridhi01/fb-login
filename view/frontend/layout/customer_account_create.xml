@@ -1,0 +1,18 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<head>
+      <!-- for css file -->
+      <css src="Excellence_FacebookLogin::css/style.css"/>
+  </head>
+    <body>
+   		<referenceBlock name="customer_form_register">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Excellence_FacebookLogin::customer/form/register.phtml</argument>
+            </action>
+        </referenceBlock>
+   </body>
+    <!-- <referenceContainer name="content">
+        <block class="Excellence\FacebookLogin\Block\FacebookLogin"  ifconfig="facebooklogin/facebook/is_enabled" after="-" name="before.customer.registration.FacebookLogin" template="Excellence_FacebookLogin::facebooklogin.phtml">
+
+        </block>
+    </referenceContainer> -->
+</page>
