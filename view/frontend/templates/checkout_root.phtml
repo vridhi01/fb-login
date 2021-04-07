@@ -1,0 +1,50 @@
+
+   <script>
+       require(['jquery'], function (jQuery) {
+        ;(function($){
+  $.fn.jqSocialSharer = function(options){
+    
+    //settings
+    var settings = $.extend({
+      "popUpWidth" : 500,               /*Width of the Pop-Up Window*/
+      "popUpHeight": 270,               /*Height of the Pop-Up Window*/
+      "popUpTop"   : 100,               /*Top value for Pop-Up Window*/
+      "useCurrentLocation" : false      /*Whether or not use current location for sharing*/
+    }, options);
+    
+    /*Attach this plugin to each element in the DOM selected by jQuery Selector and retain statement chaining*/
+    return this.each(function(index, value){
+      
+      /*Respond to click event*/
+      //$(this).bind("click", function(evt){
+        
+        //evt.preventDefault();
+        
+        /*Define*/
+        var social = $(this).data('social'),
+            width=settings.popUpWidth,
+            height=settings.popUpHeight,
+            sHeight=screen.height, 
+            sWidth=screen.width, 
+            left=Math.round((sWidth/2)-(width/2)), 
+            top=settings.popUpTop, 
+            url,
+            useCurrentLoc = settings.useCurrentLocation,
+            
+        
+        
+        url = '<?php echo $block->getLoginUrl()?>';
+        /*Finally fire the Pop-up*/    
+        window.open(url, '', 'left='+left+' , top='+top+', width='+width+', height='+height+', personalbar=0, toolbar=0, scrollbars=1, resizable=1');         
+      //});
+    });
+  };
+}(jQuery));
+        jQuery(document).on("click", "#btn_facebook_login", function(){
+           jQuery("#btn_facebook_login").jqSocialSharer();
+        });
+        
+
+          
+       });
+   </script>
